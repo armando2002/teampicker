@@ -5,6 +5,10 @@
 var teams = ['Ms-Pac Man: Team Blinky', 'Ms-Pac Man: Team Clyde', 'Donkey Kong: Team Barrel', 'Donkey Kong: Team Hammer', 'Space Invaders', 'Dig Dug'];
 var list = [];
 
+// add functionality to choose random team based on remaining spots in team
+
+// if length of team is <1, remove the team from the array
+
 // event listner for button click to Pick Team
  document.getElementById("pickbtn").addEventListener("click", function(event) {
     event.preventDefault();
