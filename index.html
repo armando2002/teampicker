@@ -9,22 +9,18 @@
     <link rel="stylesheet" href="style.css">
     <title>Team Picker</title>
 </head>
-<body>
-    <h1>Team Picker</h1>
-    <p>Click the button to pick a team</p>
-    <form id="pickform">
-        <button type="submit" onclick="onClick()" id="pickbtn">Pick Team</button>
-    </form>
-    <p id='team'></p>
-
-    <p>Player: <a id="clicks">0</a></p>
-
-    <script type="text/javascript">
-        var clicks = 0;
-        function onClick() {
-            clicks += 1;
-            document.getElementById("clicks").innerHTML = clicks;
-        };
-        </script>
+<body id="top-area" class="grid">
+    <header>
+        <div class='bg-image'></div>
+    </header>
+    <main class="main-area">
+        <h1 class="title">Team Picker</h1>
+        <p>Click the button to pick a team</p>
+        <form id="pickform">
+            <button type="submit" onclick="onClick()" id="pickbtn">Pick Team</button>
+        </form>
+        <p id='team'></p>
+        <p id='player'>You are Player: <a id="clicks">0</a></p>
+    </main>
 </body>
 </html>

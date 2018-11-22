@@ -9,9 +9,19 @@ function pickTeam() {
     /* Event listener for button click */
     $('#pickform').on('submit', function(event){
         event.preventDefault();
+        /* unhide player */
+        var x = document.getElementById("player");
+        x.style.display = "block";
         var randomTeam = teams[Math.floor(Math.random()*teams.length)];
         $('#team').html("Your team is "+randomTeam);
     });
 };
+
+var clicks = 0;
+
+function onClick() {
+    clicks += 1;
+    document.getElementById("clicks").innerHTML = clicks;
+    };
 
 $(pickTeam);
