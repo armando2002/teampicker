@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="index.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Team Picker</title>
 </head>
@@ -15,12 +14,19 @@
     </header>
     <main class="main-area">
         <h1 class="title">Team Picker</h1>
-        <p>Click the button to pick a team</p>
+        <p>Click or push the button to pick a team:</p>
         <form id="pickform">
-            <button type="submit" onclick="onClick()" id="pickbtn">Pick Team</button>
+            <button type="click" onclick="onClick()" id="pickbtn" class="btn">Pick Team</button>
         </form>
         <p id='team'></p>
         <p id='player'>You are Player: <a id="clicks">0</a></p>
     </main>
+    <footer>
+        <form id="generatelist">
+            <button type="click" id="showlist" class="btn">Show current list</button>
+            <button type="click" id="closelist" class="btn">Close current list</button>
+        </form>
+    </footer>
+    <script src="index.js"></script>
 </body>
 </html>

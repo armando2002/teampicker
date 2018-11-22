@@ -29,7 +29,7 @@ body {
     margin: 0;
 }
 
-#pickbtn {
+.btn {
         display: inline-block;
         background: #232323;
         color: whitesmoke;
@@ -41,5 +41,13 @@ body {
 }
 
 #player {
+    display: none;
+}
+
+#showlist {
+    display: none;
+}
+
+#closelist {
     display: none;
 }

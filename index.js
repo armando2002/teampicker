@@ -3,25 +3,66 @@
 
 
 var teams = ['Ms-Pac Man: Team Blinky', 'Ms-Pac Man: Team Clyde', 'Donkey Kong: Team Barrel', 'Donkey Kong: Team Hammer', 'Space Invaders', 'Dig Dug'];
+var list = [];
 
+// event listner for button click to Pick Team
+ document.getElementById("pickbtn").addEventListener("click", function(event) {
+    event.preventDefault();
+    // choose team
+    var randomTeam = teams[Math.floor(Math.random()*teams.length)];
+    $('#team').html("Your team is "+randomTeam);
+    // unhide player
+    var x = document.getElementById("player");
+    x.style.display = "block";
+    // unhide show current list
+    var y = document.getElementById("showlist");
+    y.style.display = "block";
+    
+ });
 
-function pickTeam() {
-    /* Event listener for button click */
-    $('#pickform').on('submit', function(event){
-        event.preventDefault();
-        /* unhide player */
-        var x = document.getElementById("player");
-        x.style.display = "block";
-        var randomTeam = teams[Math.floor(Math.random()*teams.length)];
-        $('#team').html("Your team is "+randomTeam);
-    });
-};
+// event listener for Show Current List button click
+ document.getElementById("showlist").addEventListener("click", function(event) {
+    event.preventDefault();
+    // hide team
+    var x = document.getElementById("team");
+    x.style.display = "none";
+    // hide player
+    var x = document.getElementById("player");
+    x.style.display = "none";
+    // hide show list
+    var y = document.getElementById("showlist");
+    y.style.display = "none";
+    // hide pick team button
+    var x = document.getElementById("pickbtn");
+    x.style.display = "none";
+    // unhide close list button
+    var y = document.getElementById("closelist");
+    y.style.display = "block";
+ });
 
+// event listener for hide Close Current List
+document.getElementById("closelist").addEventListener("click", function(event) {
+    event.preventDefault();
+    // show team
+    var x = document.getElementById("team");
+    x.style.display = "block";
+    // show player
+    var x = document.getElementById("player");
+    x.style.display = "block";
+    // show show list button
+    var y = document.getElementById("showlist");
+    y.style.display = "block";
+    // show pick team button
+    var y = document.getElementById("pickbtn");
+    y.style.display = "inline-block";
+    // hide close list button
+    var y = document.getElementById("closelist");
+    y.style.display = "none";
+});
+
+// counts # of players by # of times pick team clicked
 var clicks = 0;
-
 function onClick() {
     clicks += 1;
     document.getElementById("clicks").innerHTML = clicks;
     };
-
-$(pickTeam);
