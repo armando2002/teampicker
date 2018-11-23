@@ -3,7 +3,15 @@
 
 
 var teams = ['Ms-Pac Man: Team Blinky', 'Ms-Pac Man: Team Clyde', 'Donkey Kong: Team Barrel', 'Donkey Kong: Team Hammer', 'Space Invaders', 'Dig Dug'];
-var list = [];
+var list = {};
+
+// counts # of players by # of times pick team clicked
+var clicks = 0;
+function onClick() {
+    clicks += 1;
+    document.getElementById("clicks").innerHTML = clicks;
+    };
+
 
 // add functionality to choose random team based on remaining spots in team
 
@@ -21,7 +29,10 @@ var list = [];
     // unhide show current list
     var y = document.getElementById("showlist");
     y.style.display = "block";
-    
+    // add player # and randomTeam to object, currently the clicks variable is showing as a string
+    Object.assign(list, {[clicks]: randomTeam});
+    // update list in html
+    $('#list').html(list);
  });
 
 // event listener for Show Current List button click
@@ -41,6 +52,9 @@ var list = [];
     x.style.display = "none";
     // unhide close list button
     var y = document.getElementById("closelist");
+    y.style.display = "block";
+    // show list
+    var y = document.getElementById("list");
     y.style.display = "block";
  });
 
@@ -62,11 +76,7 @@ document.getElementById("closelist").addEventListener("click", function(event) {
     // hide close list button
     var y = document.getElementById("closelist");
     y.style.display = "none";
+    // hide list
+    var y = document.getElementById("list");
+    y.style.display = "none";
 });
-
-// counts # of players by # of times pick team clicked
-var clicks = 0;
-function onClick() {
-    clicks += 1;
-    document.getElementById("clicks").innerHTML = clicks;
-    };
