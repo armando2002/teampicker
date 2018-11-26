@@ -39,10 +39,23 @@ body {
         padding: 1em 2em;
         border: 1px solid #666;
         margin: .5em 0;
-        font-size: inherit;
+        font-size: 75%;
+        text-transform: uppercase;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn:active {
+    transform: translateY(-1px);
 }
 
 #player {
+    display: none;
+}
+
+#list {
     display: none;
 }
 

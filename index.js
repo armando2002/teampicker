@@ -2,7 +2,15 @@
 /* Set key value pair for each team in the array set to requested # of people in team, once array reaches 0, remove the team from the available selection */
 
 
-var teams = ['Ms-Pac Man: Team Blinky', 'Ms-Pac Man: Team Clyde', 'Donkey Kong: Team Barrel', 'Donkey Kong: Team Hammer', 'Space Invaders', 'Dig Dug'];
+var teams = [
+'Ms-Pac Man: Team Blinky',
+'Ms-Pac Man: Team Clyde',
+'Donkey Kong: Team Barrel',
+'Donkey Kong: Team Hammer',
+'Space Invaders',
+'Dig Dug'
+];
+
 var list = {};
 
 // counts # of players by # of times pick team clicked
@@ -32,7 +40,9 @@ function onClick() {
     // add player # and randomTeam to object, currently the clicks variable is showing as a string
     Object.assign(list, {[clicks]: randomTeam});
     // update list in html
-    $('#list').html(list);
+    $('#list').text(list);
+    // debug
+    console.log(list);
  });
 
 // event listener for Show Current List button click
