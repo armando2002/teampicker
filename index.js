@@ -39,10 +39,10 @@ function onClick() {
     y.style.display = "block";
     // add player # and randomTeam to object, currently the clicks variable is showing as a string
     Object.assign(list, {[clicks]: randomTeam});
+    // stringify object
+    var listStr = JSON.stringify(list);
     // update list in html
-    $('#list').text(list);
-    // debug
-    console.log(list);
+    $('#list').text(listStr);
  });
 
 // event listener for Show Current List button click
